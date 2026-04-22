@@ -3,10 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПравИло — Точка Сборки Вашего Тела</title>
-    <!-- Подключаем Tailwind CSS для современной верстки -->
+    
+    <!-- SEO Оптимизация -->
+    <title>ПравИло Дзержинск — Студия растяжки «Точка Сборки» | Запись</title>
+    <meta name="description" content="Профессиональная растяжка на тренажере ПравИло в Дзержинске. Глубокая декомпрессия позвоночника, снятие болей в спине и зажимов. Запишитесь на первое бесплатное занятие в студию Точка Сборки.">
+    <meta name="keywords" content="ПравИло Дзержинск, растяжка Дзержинск, декомпрессия позвоночника, болит спина Дзержинск, йога Дзержинск, тренажер правило, Точка Сборки Дзержинск">
+    
+    <!-- Favicon (Иконка сайта) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Социальные сети (Open Graph) -->
+    <meta property="og:title" content="ПравИло Дзержинск — Студия «Точка Сборки»">
+    <meta property="og:description" content="Глубокая декомпрессия и восстановление ресурса на тренажере ПравИло. Первая тренировка бесплатно!">
+    <meta property="og:image" content="atmo2.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Микроразметка Schema.org для локального бизнеса -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Студия ПравИло Точка Сборки",
+      "image": "atmo2.jpg",
+      "telephone": "+79524734797",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Кирова 6",
+        "addressLocality": "Дзержинск",
+        "postalCode": "606000",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 56.2389,
+        "longitude": 43.4631
+      }
+    }
+    </script>
+
+    <!-- Подключение библиотек -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --magenta: #d61a8c;
@@ -25,7 +63,6 @@
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
         }
-        /* Отступ для якорных ссылок */
         section { scroll-margin-top: 80px; }
 
         .text-gradient {
@@ -46,13 +83,20 @@
         .neon-glow {
             filter: drop-shadow(0 0 10px rgba(214, 26, 140, 0.5));
         }
+        
         /* Плавающая кнопка Telegram */
-        .float-btn {
+        .float-btns-container {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 100;
-            transition: all 0.3s ease;
+        }
+        .float-btn {
+            padding: 16px;
+            border-radius: 9999px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+            display: block;
         }
         .float-btn:hover {
             transform: scale(1.1) rotate(5deg);
@@ -93,7 +137,7 @@
             to { opacity: 0.5; transform: scale(1.02); }
         }
         
-        /* Стили для ИИ чата */
+        /* Чат-пузырь ИИ */
         .ai-chat-bubble {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -124,50 +168,70 @@
             transform: scale(1.1);
         }
         
-        /* Карта - темная стилизация */
         .map-container {
             filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
             border-radius: 40px;
             overflow: hidden;
         }
+
+        /* Мобильное меню */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body>
 
-    <!-- Кнопка Telegram -->
-    <a href="https://t.me/pravIIIlo" target="_blank" class="float-btn bg-[#0088cc] p-4 rounded-full shadow-[0_0_25px_rgba(0,136,204,0.5)]" aria-label="Написать в Telegram">
-        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-        </svg>
-    </a>
+    <!-- Плавающая кнопка Telegram -->
+    <div class="float-btns-container">
+        <a href="https://t.me/pravIIIlo" target="_blank" class="float-btn bg-[#0088cc] text-white" aria-label="Написать в Telegram">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+        </a>
+    </div>
 
-    <!-- Навигация -->
+    <!-- Мобильная панель навигации -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-black p-8 flex flex-col justify-center items-center space-y-8 lg:hidden">
+        <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white" aria-label="Закрыть меню">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="#about" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-magenta transition">Метод</a>
+        <a href="#gallery" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-magenta transition">Галерея</a>
+        <a href="#reviews" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest hover:text-magenta transition">Отзывы</a>
+        <a href="#booking" onclick="toggleMenu()" class="text-2xl font-bold uppercase text-magenta">Записаться</a>
+        <div class="pt-10 flex space-x-8">
+            <a href="https://vk.com/tochka_dzr" class="text-gray-400 text-lg uppercase font-black">ВКонтакте</a>
+            <a href="https://t.me/pravIIIlo" class="text-gray-400 text-lg uppercase font-black">Telegram</a>
+        </div>
+    </div>
+
+    <!-- Десктопная навигация -->
     <nav class="fixed w-full z-50 nav-blur border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center space-x-2 shrink-0">
-                    <a href="#" class="text-xl md:text-2xl font-black tracking-tighter text-gradient neon-glow uppercase">ТОЧКА СБОРКИ</a>
-                </div>
+                <a href="/" class="text-xl md:text-2xl font-black tracking-tighter text-gradient neon-glow uppercase shrink-0">ТОЧКА СБОРКИ</a>
 
-                <!-- Меню -->
                 <div class="hidden lg:flex space-x-8 text-[10px] font-bold uppercase tracking-[0.2em] items-center text-gray-300">
                     <a href="#about" class="hover:text-magenta transition">Метод</a>
                     <a href="#gallery" class="hover:text-magenta transition">Галерея</a>
                     <a href="#reviews" class="hover:text-magenta transition">Отзывы</a>
-                    <a href="#prep" class="hover:text-magenta transition">Подготовка</a>
-                    <a href="#booking" class="hover:text-magenta transition text-magenta font-black uppercase tracking-widest">Бесплатно</a>
-                    
+                    <a href="#booking" class="hover:text-magenta transition text-magenta font-black">Бесплатно</a>
                     <a href="tel:+79524734797" class="ml-4 text-[12px] text-white hover:text-teal transition flex items-center">
                         <svg class="w-4 h-4 mr-1 text-teal" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 005.455 5.455l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
                         +7 (952) 473-47-97
                     </a>
                 </div>
 
-                <div class="flex items-center space-x-3 text-right">
-                    <a href="tel:+79524734797" class="lg:hidden p-2 text-teal border border-teal/30 rounded-full bg-teal/5">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 005.455 5.455l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                    </a>
-                    <a href="#booking" class="bg-magenta-gradient text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:scale-105 transition shadow-[0_0_20px_rgba(214,26,140,0.4)]">
+                <div class="flex items-center space-x-3">
+                    <button onclick="toggleMenu()" class="lg:hidden p-2 text-white" aria-label="Меню">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                    <a href="#booking" class="bg-magenta-gradient text-white px-6 py-3 rounded-full text-xs font-bold uppercase hover:scale-105 transition shadow-[0_0_20px_rgba(214,26,140,0.4)]">
                         Записаться
                     </a>
                 </div>
@@ -178,265 +242,176 @@
     <!-- Главный экран -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
+            <!--  -->
             <img src="atmo2.jpg" class="w-full h-full object-cover opacity-40 grayscale" alt="Атмосфера студии" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1600'">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
         
         <div class="relative z-10 max-w-5xl px-4 text-center">
-            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none tracking-tight uppercase text-white text-center">
+            <h1 class="text-6xl md:text-9xl font-black mb-6 leading-none tracking-tighter uppercase text-white">
                 ПРАВ<span class="text-magenta">И</span>ЛО
             </h1>
-            <p class="text-lg md:text-2xl mb-10 font-light text-gray-400 max-w-3xl mx-auto leading-relaxed text-center">
-                Глубокая <span class="text-white font-semibold text-center">декомпрессия</span> и восстановление ресурса.<br> 
-                Ваша персональная точка сборки.
+            <p class="text-lg md:text-2xl mb-10 font-light text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Глубокая <span class="text-white font-semibold">декомпрессия</span> и восстановление ресурса.<br> 
+                Ваша персональная точка сборки в Дзержинске.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#booking" class="bg-magenta-gradient text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:shadow-[0_0_40px_rgba(214,26,140,0.5)] transition duration-300 text-sm">
+                <a href="#booking" class="bg-magenta-gradient text-white px-10 py-5 rounded-2xl font-black uppercase text-sm tracking-widest">
                     Первое занятие бесплатно
-                </a>
-                <a href="#about" class="bg-white/5 border border-white/10 px-10 py-5 rounded-2xl font-bold uppercase tracking-widest hover:bg-white/10 transition duration-300 text-sm">
-                    Узнать о методе
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Секция: Метод + ИИ Ассистент -->
+    <!-- Секция: Метод + ИИ -->
     <section id="about" class="py-32 max-w-7xl mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-16 items-start">
             <div class="relative text-left">
                 <div class="absolute -top-10 -left-10 w-40 h-40 bg-magenta/20 rounded-full blur-[80px]"></div>
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-8 leading-tight uppercase text-white">
-                    Почему ваше тело «молчит»? <br><span class="text-teal">Секрет глубокой декомпрессии</span> на ПравИло
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-8 leading-tight text-white uppercase">
+                    Глубокая декомпрессия: <br><span class="text-teal">Секрет здоровья спины</span>
                 </h2>
                 
-                <!-- ✨ ИИ-Консультант ✨ -->
-                <div id="ai-consult-block" class="mb-12 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[32px] p-8 shadow-2xl relative overflow-hidden group text-left">
-                    <div class="absolute top-0 right-0 p-4 opacity-20 text-teal text-4xl">🧬</div>
+                <!-- ИИ-Консультант -->
+                <div id="ai-consult-block" class="mb-12 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[32px] p-8 shadow-2xl relative overflow-hidden group">
                     <div class="relative z-10 text-left">
                         <div class="flex items-center space-x-3 mb-6">
-                            <div class="w-10 h-10 rounded-full bg-teal flex items-center justify-center animate-pulse text-black shadow-[0_0_15px_rgba(45,212,191,0.5)] text-sm">✨</div>
-                            <div class="text-left">
-                                <h3 class="text-xs font-black uppercase tracking-[0.2em] text-teal">AI Health Assistant</h3>
-                                <p class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Powered by Gemini AI</p>
-                            </div>
+                            <div class="w-10 h-10 rounded-full bg-teal flex items-center justify-center animate-pulse text-black text-sm font-black text-center">✨</div>
+                            <h3 class="text-xs font-black uppercase tracking-[0.2em] text-teal">ИИ-Мастер ПравИло</h3>
                         </div>
-                        <p class="text-[12px] text-gray-300 mb-4 font-bold uppercase tracking-wider">Опишите ваше состояние (боли, зажимы, цели):</p>
-                        <div class="flex flex-col gap-3">
-                            <textarea id="ai-query" placeholder="Например: Болит поясница после работы, хочется расслабиться..." class="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 text-sm outline-none focus:border-teal transition text-white min-h-[100px] resize-none placeholder-gray-700"></textarea>
-                            <button onclick="askAIExpert()" id="ai-ask-btn" class="w-full bg-teal text-black py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-white transition shadow-xl shadow-teal/10">Получить совет ИИ</button>
-                        </div>
+                        <p class="text-[12px] text-gray-300 mb-4 font-bold uppercase">Опишите ваши ощущения или цели:</p>
+                        <textarea id="ai-query" placeholder="Например: болит спина после работы, хочу сесть на шпагат..." class="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 text-sm outline-none focus:border-teal transition text-white min-h-[100px] resize-none"></textarea>
+                        <button onclick="askAIExpert()" id="ai-ask-btn" class="mt-4 w-full bg-teal text-black py-4 rounded-2xl font-black uppercase hover:bg-white transition shadow-xl">Получить консультацию</button>
                         <div id="ai-response" class="hidden ai-chat-bubble border-teal/20 text-left"></div>
                     </div>
                 </div>
 
-                <div class="space-y-6 text-gray-400 text-base leading-relaxed text-left">
-                    <p>Большинство тренировок работают с мышцами. Мы работаем с первопричиной — фасциями и связками, где копится 90% физического стресса.</p>
+                <div class="space-y-6 text-gray-400 text-base leading-relaxed">
+                    <p>Наша студия специализируется на горизонтальном вытяжении. Это самый безопасный способ убрать физические блоки и восстановить ресурсное состояние организма.</p>
                 </div>
             </div>
             
-            <!-- Окно с фото и 3D эффектом -->
             <div class="relative sticky top-32 group">
                 <div id="tilt-box" class="dynamic-photo-container relative bg-neutral-900 rounded-[40px] overflow-hidden border border-white/10 aspect-[4/5] shadow-2xl neon-border-animate">
-                    <div class="fade-image active"><img src="atmo1.jpg" class="w-full h-full object-cover"></div>
-                    <div class="fade-image"><img src="atmo4.jpg" class="w-full h-full object-cover"></div>
-                    <div class="fade-image"><img src="atmo6.jpg" class="w-full h-full object-cover"></div>
-                    <div class="fade-image"><img src="atmo8.jpg" class="w-full h-full object-cover"></div>
+                    <div class="fade-image active"><img src="atmo1.jpg" class="w-full h-full object-cover" alt="Процесс тренировки на тренажере ПравИло"></div>
+                    <div class="fade-image"><img src="atmo4.jpg" class="w-full h-full object-cover" alt="Растяжка мышц"></div>
+                    <div class="fade-image"><img src="atmo6.jpg" class="w-full h-full object-cover" alt="Работа мастера"></div>
+                    <div class="fade-image"><img src="atmo8.jpg" class="w-full h-full object-cover" alt="Тренажер крупным планом"></div>
                 </div>
-                <div class="absolute inset-0 bg-magenta-gradient rounded-[40px] blur-3xl opacity-5 -z-10 group-hover:opacity-20 transition duration-700 text-left"></div>
             </div>
         </div>
     </section>
 
-    <!-- Секция: ГАЛЕРЕЯ -->
+    <!-- Галерея -->
     <section id="gallery" class="py-32 bg-neutral-950">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase text-white">Атмосфера студии</h2>
-            <p class="text-gray-500 uppercase tracking-widest text-xs mb-20 text-center font-bold">Пространство вашей личной трансформации</p>
+            <h2 class="text-4xl md:text-5xl font-black mb-20 uppercase text-white">Фото студии</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="gallery-item relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="atmo1.jpg" class="w-full h-full object-cover" alt="Процесс растяжки">
+                    <img src="atmo1.jpg" class="w-full h-full object-cover" alt="ПравИло тренировка 1">
                 </div>
                 <div class="gallery-item relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="atmo2.jpg" class="w-full h-full object-cover" alt="Интерьер студии">
+                    <img src="atmo2.jpg" class="w-full h-full object-cover" alt="Интерьер Точки Сборки">
                 </div>
                 <div class="gallery-item relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="atmo3.jpg" class="w-full h-full object-cover" alt="Тренажер Правило">
+                    <img src="atmo3.jpg" class="w-full h-full object-cover" alt="Занятия Дзержинск">
                 </div>
                 <div class="gallery-item relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="atmo4.jpg" class="w-full h-full object-cover" alt="Занятия">
+                    <img src="atmo4.jpg" class="w-full h-full object-cover" alt="Тренажер фото">
                 </div>
                 <div class="gallery-item relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="atmo6.jpg" class="w-full h-full object-cover" alt="Вид на зал">
+                    <img src="atmo6.jpg" class="w-full h-full object-cover" alt="Атмосфера лофта">
                 </div>
                 <div class="gallery-item relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="atmo7.jpg" class="w-full h-full object-cover" alt="Работа с мастером">
+                    <img src="atmo7.jpg" class="w-full h-full object-cover" alt="Работа с позвоночником">
                 </div>
                 <div class="gallery-item relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="atmo8.jpg" class="w-full h-full object-cover" alt="Детали тренажера">
+                    <img src="atmo8.jpg" class="w-full h-full object-cover" alt="Детали оборудования">
                 </div>
                 <div class="gallery-item relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="atmo9.jpg" class="w-full h-full object-cover" alt="Инверсионная растяжка">
+                    <img src="atmo9.jpg" class="w-full h-full object-cover" alt="Инверсия фото">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Секция: ОТЗЫВЫ -->
+    <!-- Отзывы -->
     <section id="reviews" class="py-32">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase text-white">Что говорят клиенты</h2>
-            <p class="text-gray-500 uppercase tracking-widest text-xs mb-20 text-center font-bold">Истории возвращения к себе</p>
+            <h2 class="text-4xl md:text-5xl font-black mb-20 uppercase text-white">Отзывы о студии</h2>
             <div class="grid md:grid-cols-3 gap-8 text-left">
                 <div class="p-8 rounded-[40px] bg-white/5 border border-white/10 relative group hover:border-magenta transition duration-500 text-left">
                     <div class="text-gold mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">"Как музыканту, мне важно чувствовать свободу в руках и спине. После сеанса на ПравИло зажимы уходят, и играть становится намного легче. Невероятное чувство полета."</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150" class="w-12 h-12 rounded-full object-cover border-2 border-magenta shadow-lg" alt="Алексей М.">
-                        <div class="text-left">
-                            <div class="text-white text-xs font-black uppercase tracking-widest text-left">Алексей М.</div>
-                            <div class="text-gray-500 text-[10px] uppercase font-bold text-left">Музыкант</div>
-                        </div>
-                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic text-left">"Лучшая растяжка! ПравИло реально помогает спине после рабочего дня за компом."</p>
+                    <p class="text-white text-xs font-black uppercase tracking-widest text-left">Алексей М. (Музыкант)</p>
                 </div>
                 <div class="p-8 rounded-[40px] bg-white/5 border border-white/10 relative group hover:border-teal transition duration-500 text-left">
                     <div class="text-gold mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">"Работа электрика — это вечно задраны руки и неудобные позы. Спина болела постоянно. После первой правки почувствовал, что позвоночник буквально 'встал на место'."</p>
-                    <div class="flex items-center space-x-4 text-left">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150" class="w-12 h-12 rounded-full object-cover border-2 border-teal shadow-lg" alt="Ирина К.">
-                        <div class="text-left">
-                            <div class="text-white text-xs font-black uppercase tracking-widest text-left">Ирина К.</div>
-                            <div class="text-gray-500 text-[10px] uppercase font-bold text-left">Электрик</div>
-                        </div>
-                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic text-left">"После тренировки чувствую себя на 10 лет моложе. Позвоночник будто выровнялся."</p>
+                    <p class="text-white text-xs font-black uppercase tracking-widest text-left">Ирина К. (Электрик)</p>
                 </div>
                 <div class="p-8 rounded-[40px] bg-white/5 border border-white/10 relative group hover:border-gold transition duration-500 text-left">
                     <div class="text-gold mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">"Я ценю глубокое состояние покоя. ПравИло — это для меня медитация в движении. После тренировки мысли ясные, а в теле — чистая энергия."</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150&h=150" class="w-12 h-12 rounded-full object-cover border-2 border-gold shadow-lg" alt="Дмитрий В.">
-                        <div class="text-left text-left text-left">
-                            <div class="text-white text-xs font-black uppercase tracking-widest text-left text-left text-left">Дмитрий В.</div>
-                            <div class="text-gray-500 text-[10px] uppercase font-bold text-left text-left text-left">Чайный мастер</div>
-                        </div>
-                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic text-left">"Прекрасное место для полной перезагрузки. Обязательно попробуйте ИИ-прогноз!"</p>
+                    <p class="text-white text-xs font-black uppercase tracking-widest text-left">Дмитрий В. (Чайный мастер)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Секция: Подготовка -->
-    <section id="prep" class="py-32 bg-neutral-950/50 border-y border-white/5 text-center text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-black mb-16 uppercase text-white text-center">Как подготовиться к <br><span class="text-teal">первой правке?</span></h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="p-6">
-                    <div class="text-magenta text-4xl mb-4 italic grayscale hover:grayscale-0 transition duration-300">🎽</div>
-                    <h3 class="text-white text-xs font-bold mb-2 uppercase tracking-widest text-center">Одежда</h3>
-                    <p class="text-gray-500 text-[11px] leading-relaxed uppercase tracking-tighter text-center">Чистая футболка и штаны. Без пуговиц.</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-teal text-4xl mb-4 italic grayscale hover:grayscale-0 transition duration-300 text-center text-center">🥗</div>
-                    <h3 class="text-white text-xs font-bold mb-2 uppercase tracking-widest text-center">Питание</h3>
-                    <p class="text-gray-500 text-[11px] leading-relaxed uppercase tracking-tighter text-center text-center">За 1.5–2 часа до занятия.</p>
-                </div>
-                <div class="p-6 text-center text-center text-center">
-                    <div class="text-gold text-4xl mb-4 italic grayscale hover:grayscale-0 transition duration-300 text-center">🧘</div>
-                    <h3 class="text-white text-xs font-bold mb-2 uppercase tracking-widest text-center text-center">Настрой</h3>
-                    <p class="text-gray-500 text-[11px] leading-relaxed uppercase tracking-tighter text-center text-center">Готовность отпустить контроль.</p>
-                </div>
-                <div class="p-6 text-center text-center text-center text-center">
-                    <div class="text-white text-4xl mb-4 italic grayscale hover:grayscale-0 transition duration-300 text-center">⏰</div>
-                    <h3 class="text-white text-xs font-bold mb-2 uppercase tracking-widest text-center text-center">Тайминг</h3>
-                    <p class="text-gray-500 text-[11px] leading-relaxed uppercase tracking-tighter text-center">Приходите за 10 минут.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция: FAQ -->
-    <section class="py-32">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-black mb-16 text-center uppercase text-white">Частые вопросы</h2>
-            <div class="space-y-4 text-left">
-                <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 cursor-pointer text-left">
-                    <summary class="flex justify-between items-center font-bold text-sm uppercase tracking-widest list-none text-left">
-                        Это больно?
-                        <span class="text-teal group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="mt-4 text-gray-400 text-sm leading-relaxed text-left">Нет. Мы работаем в «зеленой зоне» комфорта. Вытяжение происходит плавно, и мастер всегда контролирует нагрузку.</p>
-                </details>
-                <details class="group bg-white/5 border border-white/10 rounded-2xl p-6 cursor-pointer text-left">
-                    <summary class="flex justify-between items-center font-bold text-sm uppercase tracking-widest list-none text-left">
-                        Сколько длится занятие?
-                        <span class="text-teal group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="mt-4 text-gray-400 text-sm leading-relaxed text-left text-left">Первый сеанс — 60 минут: диагностика + 40 минут активной работы на тренажере.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция: ОФФЕР И ЗАПИСЬ -->
-    <section id="booking" class="py-32 relative overflow-hidden bg-neutral-950 text-left">
+    <!-- Запись и ИИ Прогноз -->
+    <section id="booking" class="py-32 relative overflow-hidden bg-neutral-950">
         <div class="absolute inset-0 bg-magenta-gradient opacity-10 blur-[120px]"></div>
         <div class="max-w-6xl mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center text-left">
-            <div class="space-y-8 text-left text-left">
-                <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight text-white text-left text-left">
-                    Ваша первая <br><span class="text-gradient">правка — 0 ₽</span>
-                </h2>
-                <div class="space-y-6 text-left">
-                    <h3 class="text-teal font-bold uppercase tracking-widest text-sm underline decoration-teal/30 underline-offset-8 italic text-left">Индивидуальный прогноз:</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-md text-left">Нажмите кнопку <span class="text-white font-bold text-left text-left text-left">✨ ИИ-прогноз</span>, чтобы узнать ваши ощущения после тренировки.</p>
+            <div class="space-y-8 text-left">
+                <h2 class="text-4xl md:text-5xl font-black uppercase text-white">Ваша первая <br><span class="text-gradient">правка — 0 ₽</span></h2>
+                <div class="space-y-6">
+                    <h3 class="text-teal font-bold uppercase text-sm underline decoration-teal/30 underline-offset-8 italic text-left text-left">Индивидуальный прогноз:</h3>
+                    <p class="text-gray-400 text-sm max-w-md text-left text-left">Нажмите кнопку <span class="text-white font-bold">✨ ИИ-прогноз</span>, чтобы узнать ваши ощущения после первой тренировки.</p>
                 </div>
             </div>
 
-            <!-- Форма -->
             <div class="bg-neutral-900 border border-white/10 p-8 md:p-12 rounded-[40px] shadow-2xl relative text-left">
                 <form id="contactForm" class="space-y-6 relative z-10 text-left">
-                    <div class="space-y-2 text-left">
-                        <label class="text-[10px] uppercase tracking-widest text-gray-500 ml-4 font-bold text-left block text-left">Ваше Имя</label>
-                        <input type="text" id="name" placeholder="Как к вам обращаться?" required class="w-full bg-white/5 border border-white/10 px-6 py-4 rounded-2xl focus:border-magenta outline-none transition text-white">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-gray-500 ml-4 font-bold block text-left">Ваше Имя</label>
+                        <input type="text" id="name" required class="w-full bg-white/5 border border-white/10 px-6 py-4 rounded-2xl focus:border-magenta outline-none transition text-white">
                     </div>
-                    <div class="space-y-2 text-left">
+                    <div class="space-y-2">
                         <label class="text-[10px] uppercase tracking-widest text-gray-500 ml-4 font-bold text-teal flex justify-between items-center text-left">
                             <span>Номер телефона</span>
                             <button id="ai-predict-btn" type="button" onclick="getPersonalAIPredict()" class="text-[8px] border border-teal/40 px-3 py-1 rounded-full hover:bg-teal hover:text-black transition uppercase font-black tracking-widest">✨ ИИ-прогноз</button>
                         </label>
-                        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required class="w-full bg-white/5 border border-white/10 px-6 py-4 rounded-2xl focus:border-magenta outline-none transition text-white">
+                        <input type="tel" id="phone" required class="w-full bg-white/5 border border-white/10 px-6 py-4 rounded-2xl focus:border-magenta outline-none transition text-white">
                     </div>
                     <div id="ai-prediction-box" class="hidden ai-chat-bubble border-teal/20 text-teal italic text-[11px] bg-teal/5 text-left text-left"></div>
                     <div class="space-y-4 pt-4 text-left">
-                        <button type="submit" class="w-full bg-magenta-gradient text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:scale-[1.02] transition shadow-xl shadow-magenta/10">
-                            Забронировать бесплатно
-                        </button>
-                        <a href="tel:+79524734797" class="block text-center text-xl font-black text-white hover:text-teal transition duration-300 tracking-tighter uppercase text-center">+7 (952) 473-47-97</a>
+                        <button type="submit" class="w-full bg-magenta-gradient text-white py-5 rounded-2xl font-black uppercase hover:scale-[1.02] transition shadow-xl">Забронировать бесплатно</button>
+                        <a href="tel:+79524734797" class="block text-center text-xl font-black text-white tracking-tighter uppercase">+7 (952) 473-47-97</a>
                     </div>
                 </form>
-                <div id="successMsg" class="hidden py-10 text-center animate-fade-in text-center text-center text-center text-center">
+                <div id="successMsg" class="hidden py-10 text-center animate-fade-in text-center">
                     <div class="text-teal text-7xl mb-6 neon-glow">✦</div>
-                    <h3 class="text-2xl font-bold text-white uppercase tracking-widest text-center text-center">Место забронировано!</h3>
-                    <p class="text-gray-500 text-sm mt-4 text-center">Мастер <span id="clientName" class="text-white font-bold text-center"></span> свяжется с вами в течение 15 минут.</p>
+                    <h3 class="text-2xl font-bold text-white uppercase tracking-widest">Готово!</h3>
+                    <p class="text-gray-500 text-sm mt-4 text-center">Мастер свяжется с вами скоро.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Секция: Карта (Где мы?) -->
-    <section id="location" class="py-32 bg-neutral-900/30 text-center text-center">
+    <!-- Адрес -->
+    <section id="location" class="py-32 bg-neutral-900/30 text-center">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-black mb-8 uppercase text-white">Мы ждем вас здесь</h2>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-12 text-center text-center text-center">
-                <div class="flex items-center space-x-3 bg-white/5 px-6 py-3 rounded-full border border-white/10 text-center text-center">
-                    <span class="text-magenta text-xl text-center text-center">📍</span>
-                    <p class="text-gray-300 text-xs uppercase font-bold tracking-widest leading-none mt-1 uppercase text-center text-center">Дзержинск, ул. Кирова 6</p>
+            <h2 class="text-3xl md:text-4xl font-black mb-8 uppercase text-white">Где мы находимся?</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-12 text-center text-center">
+                <div class="flex items-center space-x-3 bg-white/5 px-6 py-3 rounded-full border border-white/10">
+                    <span class="text-magenta text-xl">📍</span>
+                    <p class="text-gray-300 text-xs uppercase font-bold tracking-widest">Дзержинск, ул. Кирова 6</p>
                 </div>
-                <a href="tel:+79524734797" class="text-teal text-xs uppercase font-black tracking-widest hover:text-white transition uppercase text-center text-center">Позвонить: +7 (952) 473-47-97</a>
             </div>
-
-            <!-- Контейнер для Яндекс Карты -->
             <div class="aspect-[16/9] md:aspect-[21/9] rounded-[40px] bg-neutral-800 border border-white/10 overflow-hidden relative shadow-2xl group text-center text-center">
-                <div id="yandex-map-container" class="map-container w-full h-full flex justify-center items-center text-center text-center">
+                <div id="yandex-map-container" class="map-container w-full h-full flex justify-center items-center text-center">
+                    <!-- Интеграция Яндекс.Карт -->
                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab9002f3d03e99ad8765c1a39870d6dd6fc53820a2714cc79b7672fc36a537df3&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
                 </div>
             </div>
@@ -445,50 +420,43 @@
 
     <!-- Подвал -->
     <footer class="py-20 border-t border-white/5 opacity-60 text-center">
-        <div class="text-gradient font-black text-xl uppercase tracking-tighter mb-8 neon-glow text-center text-center uppercase text-center">ТОЧКА СБОРКИ</div>
-        <div class="flex justify-center items-center space-x-8 text-[10px] font-bold uppercase tracking-[0.3em] mb-8 text-center text-center text-center">
-            <!-- КНОПКА ВК (Обновлена на tochka_dzr) -->
-            <a href="https://vk.com/tochka_dzr" target="_blank" class="hover:text-teal transition flex items-center group text-center">
-                <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition duration-300" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M15.63 1.913H8.37A6.457 6.457 0 0 0 1.913 8.37v7.26a6.457 6.457 0 0 0 6.457 6.457h7.26a6.457 6.457 0 0 0 6.457-6.457V8.37a6.457 6.457 0 0 0-6.457-6.457Zm4.17 13.713a3.52 3.52 0 0 1-3.52 3.52H7.72a3.52 3.52 0 0 1-3.52-3.52V8.37a3.52 3.52 0 0 1 3.52-3.52h8.56a3.52 3.52 0 0 1 3.52 3.52v7.256Zm-3.037-7.256h-1.442c-.443 0-.584.237-.584.512v1.272c0 .275.14.512.584.512h1.442a.512.512 0 0 0 .512-.512V8.882a.512.512 0 0 0-.512-.512Zm-2.88 0H12.44a.512.512 0 0 0-.512.512v3.743c0 .283.23.512.512.512h1.443a.512.512 0 0 0 .512-.512V8.882a.512.512 0 0 0-.512-.512Zm-2.88 0H9.56a.512.512 0 0 0-.512.512v1.272c0 .275.14.512.584.512h1.443c.443 0 .584-.237.584-.512V8.882a.512.512 0 0 0-.584-.512Z"/>
-                    <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10Zm3.71 14.28c-1.3 0-2.35-.45-3.04-1.29-.39-.47-.59-.97-.59-1.45 0-.17.14-.3.3-.3h.84c.15 0 .27.11.29.26.11.45.36.81.71 1.05.32.22.8.34 1.4.34.61 0 1.09-.13 1.45-.38.35-.25.53-.59.53-1.02 0-.37-.13-.67-.39-.89-.26-.22-.72-.42-1.39-.6l-1.03-.27c-.9-.23-1.58-.56-2.02-.97-.44-.41-.66-.99-.66-1.74 0-.64.21-1.2.62-1.68.41-.48 1.05-.72 1.9-.72 1.13 0 2.05.4 2.74 1.2.37.43.56.91.56 1.39 0 .17-.14.3-.31.3h-.76c-.15 0-.28-.12-.3-.27-.12-.39-.33-.69-.64-.89-.31-.2-.71-.3-1.19-.3-.54 0-.96.12-1.25.35-.29.23-.43.53-.43.9 0 .34.13.62.39.84.26.22.75.43 1.47.62l1.01.27c1.02.27 1.77.62 2.25 1.06.48.44.72 1.05.72 1.83 0 .78-.26 1.44-.77 1.98-.51.54-1.28.81-2.31.81Z"/>
-                </svg>
-                ВКонтакте
-            </a>
-            <!-- ТЕЛЕГРАМ -->
-            <a href="https://t.me/pravIIIlo" target="_blank" class="hover:text-magenta transition flex items-center text-center">
-                Telegram
-            </a>
-            <!-- ТЕЛЕФОН -->
+        <div class="text-gradient font-black text-xl uppercase tracking-tighter mb-8 neon-glow uppercase text-center">ТОЧКА СБОРКИ</div>
+        <div class="flex flex-wrap justify-center items-center gap-8 text-[10px] font-bold uppercase tracking-[0.3em] mb-8 text-center text-center">
+            <a href="https://vk.com/tochka_dzr" target="_blank" class="hover:text-teal transition">ВКонтакте</a>
+            <a href="https://t.me/pravIIIlo" target="_blank" class="hover:text-magenta transition">Telegram</a>
             <a href="tel:+79524734797" class="hover:text-gold transition uppercase tracking-widest text-center">+7 (952) 473-47-97</a>
         </div>
-        <div class="text-[10px] uppercase tracking-widest text-gray-600 mb-4 uppercase text-center font-bold">
-            Дзержинск / 2024
-        </div>
+        <p class="text-[10px] uppercase text-gray-600 mb-4 font-bold text-center">Дзержинск / 2024</p>
     </footer>
 
     <script>
         // === ВАШ API КЛЮЧ ===
         const apiKey = "AIzaSyCc1CHQRE5bWNx5m4yyxkcdD7qHugpnhMg"; 
 
-        // 1. ПРОВЕРКА ДОСТУПНОСТИ ИИ
+        // 1. Проверка связи с ИИ
         async function checkAIStatus() {
             const aiConsultBlock = document.getElementById('ai-consult-block');
             const aiPredictBtn = document.getElementById('ai-predict-btn');
             try {
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 3000);
+                setTimeout(() => controller.abort(), 3000);
                 await fetch('https://generativelanguage.googleapis.com', { mode: 'no-cors', signal: controller.signal });
-                console.log("AI Services are available.");
+                console.log("AI доступен.");
             } catch (e) {
-                console.log("AI Assistant is unavailable in this region. Hiding AI elements.");
                 if (aiConsultBlock) aiConsultBlock.classList.add('hidden');
                 if (aiPredictBtn) aiPredictBtn.classList.add('hidden');
             }
         }
         window.addEventListener('load', checkAIStatus);
 
-        // 2. ФУНКЦИИ ВЗАИМОДЕЙСТВИЯ С Моделью Gemini
+        // 2. Мобильное меню
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // 3. Работа с Gemini API
         async function callGemini(prompt, systemMsg) {
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
             const delays = [1000, 2000, 4000];
@@ -503,7 +471,7 @@
                     const data = await response.json();
                     return data.candidates?.[0]?.content?.parts?.[0]?.text;
                 } catch (e) {
-                    if (i === delays.length - 1) return "Извините, сейчас сервис перегружен. Позвоните нам напрямую!";
+                    if (i === delays.length - 1) return "Сервис занят, позвоните нам!";
                     await new Promise(res => setTimeout(res, delays[i]));
                 }
             }
@@ -514,15 +482,11 @@
             const resBox = document.getElementById('ai-response');
             const btn = document.getElementById('ai-ask-btn');
             if (!queryInput.value) return;
-            const systemPrompt = "Ты — мастер студии ПравИло 'Точка Сборки' в Дзержинске. Отвечай кратко, профессионально и вдохновляюще. Объясняй пользу горизонтального вытяжения для конкретного случая клиента.";
-            btn.innerText = "Анализирую...";
-            btn.disabled = true;
-            resBox.classList.remove('hidden');
-            resBox.innerHTML = "<span class='ai-loading-dots font-bold text-teal text-[10px] uppercase'>Мастер настраивает ресурс</span>";
+            const systemPrompt = "Ты — мастер студии ПравИло в Дзержинске. Отвечай кратко, экспертно и мотивирующе.";
+            btn.innerText = "Анализирую..."; btn.disabled = true;
+            resBox.classList.remove('hidden'); resBox.innerHTML = "<span class='ai-loading-dots uppercase text-[10px] font-bold'>Мастер думает</span>";
             const answer = await callGemini(queryInput.value, systemPrompt);
-            resBox.innerText = answer;
-            btn.innerText = "✨ Спросить еще раз";
-            btn.disabled = false;
+            resBox.innerText = answer; btn.innerText = "✨ Спросить еще раз"; btn.disabled = false;
         }
 
         async function getPersonalAIPredict() {
@@ -530,35 +494,33 @@
             const predictBox = document.getElementById('ai-prediction-box');
             if (!nameInput.value) return;
             predictBox.classList.remove('hidden');
-            predictBox.innerHTML = "<span class='ai-loading-dots uppercase text-[9px]'>Сканирую ресурс для " + nameInput.value + "</span>";
-            const answer = await callGemini(`Напиши прогноз для ${nameInput.value}`, "Ты эксперт студии растяжки. Напиши 1 короткое вдохновляющее предложение.");
+            predictBox.innerHTML = "<span class='ai-loading-dots text-[9px] uppercase'>Сканирую ресурс для " + nameInput.value + "</span>";
+            const answer = await callGemini(`Напиши прогноз для ${nameInput.value}`, "Ты эксперт растяжки. 1 короткое вдохновляющее предложение.");
             predictBox.innerText = "✨ " + answer;
         }
 
-        // 3. СЛАЙДЕР И ВИЗУАЛЬНЫЕ ЭФФЕКТЫ
+        // 4. Галерея и слайдер
         const images = document.querySelectorAll('.fade-image');
         let currentImg = 0;
-        if(images.length > 0) {
-            setInterval(() => {
+        setInterval(() => {
+            if(images.length > 0) {
                 images[currentImg].classList.remove('active');
                 currentImg = (currentImg + 1) % images.length;
                 images[currentImg].classList.add('active');
-            }, 5000);
-        }
+            }
+        }, 5000);
 
+        // 5. 3D Tilt эффект
         const tiltBox = document.getElementById('tilt-box');
         document.addEventListener('mousemove', (e) => {
             if (!tiltBox) return;
             const boxRect = tiltBox.getBoundingClientRect();
-            const mouseX = e.clientX - (boxRect.left + boxRect.width / 2);
-            const mouseY = e.clientY - (boxRect.top + boxRect.height / 2);
-            tiltBox.style.transform = `rotateX(${(mouseY / (window.innerHeight / 2)) * -12}deg) rotateY(${(mouseX / (window.innerWidth / 2)) * 12}deg)`;
+            tiltBox.style.transform = `rotateX(${( (e.clientY - (boxRect.top + boxRect.height/2)) / (window.innerHeight/2)) * -12}deg) rotateY(${( (e.clientX - (boxRect.left + boxRect.width/2)) / (window.innerWidth/2)) * 12}deg)`;
         });
 
-        // 4. ФОРМА ЗАПИСИ
+        // 6. Форма
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('clientName').innerText = document.getElementById('name').value;
             this.classList.add('hidden');
             document.getElementById('successMsg').classList.remove('hidden');
         });
